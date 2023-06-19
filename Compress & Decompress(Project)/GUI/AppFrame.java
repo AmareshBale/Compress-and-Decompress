@@ -18,20 +18,26 @@ public class AppFrame extends JFrame implements ActionListener{
     JButton DecompressButton;
     AppFrame() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //Adding the Compress Option In Frame
         CompressButton = new JButton("Select file to Compress");
         CompressButton.setBounds(300, 100, 200, 30);
         CompressButton.addActionListener(this);
+        
+        //Adding the Decompress Option In Frame
         DecompressButton = new JButton("Select file to Decompress");
         DecompressButton.setBounds(250, 100, 200, 30);
         DecompressButton.addActionListener(this);
+        
         this.add(CompressButton);
         this.add(DecompressButton);
+        
         this.setSize(1000, 1000);
         this.getContentPane().setBackground(Color.gray);
-        this.setVisible(true);
+        this.setVisible(true);   //Visibility of Frame
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        //logic of Compress Button
         if (e.getSource()==CompressButton) {
             JFileChooser fileChooser = new JFileChooser();
             int response=fileChooser.showSaveDialog(null);
@@ -45,6 +51,8 @@ public class AppFrame extends JFrame implements ActionListener{
                 }
             }
         }
+        
+        Logic of Decompress Button
          if (e.getSource()==DecompressButton) {
             JFileChooser fileChooser = new JFileChooser();
             int response=fileChooser.showSaveDialog(null);
